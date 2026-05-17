@@ -521,7 +521,7 @@ function renderTaskList(tasks,id,type,fbar){
     el.innerHTML=fbar+`<div class="empty-state">${msg}</div>`;return
   }
   const sorted=[...tasks].sort((a,b)=>(a.due_date?+a.due_date:Infinity)-(b.due_date?+b.due_date:Infinity));
-  const showInline=(type==='overdue'||type==='validate');
+  const showInline=true;
   el.innerHTML=fbar+sorted.map(t=>{
     const proj=t.name.match(/^\[([^\]]+)\]/)?.[1]||'';
     const clean=t.name.replace(/^\[([^\]]+)\]\s*/,'');
